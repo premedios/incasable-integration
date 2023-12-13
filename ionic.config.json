@@ -1,0 +1,7 @@
+{
+  "name": "incasable-integration",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
