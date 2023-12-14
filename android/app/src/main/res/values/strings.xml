@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">incasable-integration</string>
+    <string name="title_activity_main">incasable-integration</string>
+    <string name="package_name">incasable.integration</string>
+    <string name="custom_url_scheme">incasable.integration</string>
+</resources>

@@ -15,10 +15,13 @@ import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
 import com.getcapacitor.annotation.Permission
 import com.getcapacitor.annotation.PermissionCallback
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 @CapacitorPlugin(
-    name = "Kdoc",
+    name = "IncasaBLE",
     permissions = [
         Permission(
             alias = "bluetooth",
@@ -40,7 +43,8 @@ class IncasaBLEPlugin : Plugin() {
 
     override fun load() {
         implementation = IncasaBLE(activity)
-        runBlocking { setupEvents() }
+        val scope = CoroutineScope(Dispatchers.Main)
+        scope.launch { setupEvents() }
     }
 
 
@@ -104,7 +108,9 @@ class IncasaBLEPlugin : Plugin() {
 
     @PluginMethod
     fun startDevice(call: PluginCall) {
+        Log.d("debug", call.getString("deviceName").toString())
         call.getString("deviceName")?.let { setDevice(it) }
         implementation?.manager?.start(device!!)
+        call.resolve();
     }
 }
