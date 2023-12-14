@@ -30,13 +30,13 @@ const Home: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>kDoc Integration</IonTitle>
+                    <IonTitle>IncaseBLE Integration</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
                 <IonHeader collapse="condense">
                     <IonToolbar>
-                        <IonTitle size="large">kDoc Integration - {verifiedPermissions}</IonTitle>
+                        <IonTitle size="large">kDoc Integration</IonTitle>
                     </IonToolbar>
                 </IonHeader>
                 <div style={mainStyle}>
